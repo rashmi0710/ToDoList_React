@@ -75,12 +75,6 @@ npm start  # or npm run dev (for Vite)
 - 🔹 Add animations for UI interactions
 - 🔹 Integrate with a backend for user authentication
 
-## 🤝 Contributing
-Feel free to fork this repository and submit pull requests. 🚀
 
-## 🛡️ License
-This project is licensed under the **MIT License**.
-
----
 💡 **Happy Coding!** 🎯
 
