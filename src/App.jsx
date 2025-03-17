@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
-import { TodoProvider } from './assets/contexts'
+import { TodoProvider } from './assets/contexts/TodoContext';
+import TodoForm from './components/TodoForm';
+import TodoItem from './components/TodoItem';
+
 import './App.css'
 
 function App() {
@@ -7,23 +10,24 @@ function App() {
   const addTodo = (todo)=>{
     setTodos((prev)=> [{id:Date.now(), ...todo},...prev])
   }
-  const updateTodo = (id, todo)=>{
-    setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo )))    
-  }
+  const updateTodo = (id, updatedTodo) => {
+    setTodos((prev) =>
+      prev.map((prevTodo) => (prevTodo.id === id ? { ...prevTodo, ...updatedTodo } : prevTodo))
+    );
+  };
+  
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((todo)=> todo.id !== id))
   }
 
   const toggleComplete = (id)=>{
-    setTodos((prev)=> prev.map((prevTodo)=>prevTodo===id ? {...prevTodo, completed: !prevTodo.completed}:prevTodo))
+    setTodos((prev)=> prev.map((prevTodo)=>prevTodo.id===id ? {...prevTodo, completed: !prevTodo.completed}:prevTodo))
   }
-  useEffect(()=>{
-    const todos = JSON.parse(localStorage.getItem("todos"))
-
-    if(todos && todos.length > 0){
-      setTodos(todos)
-    }
-  }, [])
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    setTodos(storedTodos);
+  }, []);
+  
 
   useEffect(()=> {
     localStorage.setItem("todos",JSON.stringify(todos))
