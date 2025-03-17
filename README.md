@@ -24,10 +24,10 @@ This is a **Todo App** built using **React, Context API, and Local Storage**. It
 │   ├── components
 │   │   ├── TodoForm.js
 │   │   ├── TodoItem.js
-│   ├── assets
-│   │   ├── contexts
+│   |   ├── contexts
 │   │   │   ├── TodoContext.js
-│   ├── App.js
+│   ├── App.jsx
+|   |── App.css
 │   ├── index.js
 │   ├── index.css
 │── public
@@ -39,7 +39,7 @@ This is a **Todo App** built using **React, Context API, and Local Storage**. It
 
 1️⃣ **Clone the repository:**
 ```sh
-git clone https://github.com/your-username/react-todo-app.git
+git clone https://github.com/rashmi0710/ToDoList_React
 cd react-todo-app
 ```
 
@@ -68,7 +68,7 @@ npm start  # or npm run dev (for Vite)
 |---------|-------------|
 | `npm start` | Runs the app in development mode |
 | `npm run build` | Builds the app for production |
-| `npm test` | Runs tests (if implemented) |
+
 
 ## 📌 Future Improvements
 - 🔹 Implement a filter (Completed/Pending Todos)
@@ -76,5 +76,5 @@ npm start  # or npm run dev (for Vite)
 - 🔹 Integrate with a backend for user authentication
 
 
-💡 **Happy Coding!** 🎯
+
 
